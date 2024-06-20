@@ -1,0 +1,114 @@
+{
+    "generic": [
+        "This is a placeholder for a text for a generic Text.",
+        "2nd generic text for an exmaple"
+    ],
+    "agents": {
+        "Brimstone": [
+            "This is a placeholder for a text for Brimstone.",
+            "this is a second text for brimmy"
+        ],
+        "Phoenix": [
+            "This is a placeholder for a text for Phoenix."
+        ],
+        "Sage": [
+            "This is a placeholder for a text for Sage."
+        ],
+        "Sova": [
+            "This is a placeholder for a text for Sova."
+        ],
+        "Viper": [
+            "This is a placeholder for a text for Viper."
+        ],
+        "Cypher": [
+            "This is a placeholder for a text for Cypher."
+        ],
+        "Reyna": [
+            "This is a placeholder for a text for Reyna."
+        ],
+        "Killjoy": [
+            "This is a placeholder for a text for Killjoy."
+        ],
+        "Breach": [
+            "This is a placeholder for a text for Breach."
+        ],
+        "Omen": [
+            "This is a placeholder for a text for Omen."
+        ],
+        "Jett": [
+            "This is a placeholder for a text for Jett."
+        ],
+        "Raze": [
+            "This is a placeholder for a text for Raze."
+        ],
+        "Skye": [
+            "This is a placeholder for a text for Skye."
+        ],
+        "Yoru": [
+            "This is a placeholder for a text for Yoru."
+        ],
+        "Astra": [
+            "This is a placeholder for a text for Astra."
+        ],
+        "Kay/O": [
+            "This is a placeholder for a text for Kay/O."
+        ],
+        "Chamber": [
+            "This is a placeholder for a text for Chamber."
+        ],
+        "Neon": [
+            "This is a placeholder for a text for Neon."
+        ],
+        "Fade": [
+            "This is a placeholder for a text for Fade."
+        ],
+        "Harbor": [
+            "This is a placeholder for a text for Harbor."
+        ],
+        "Gekko": [
+            "This is a placeholder for a text for Gekko."
+        ],
+        "Deadlock": [
+            "This is a placeholder for a text for Deadlock."
+        ],
+        "Iso": [
+            "This is a placeholder for a text for Iso."
+        ],
+        "Clove": [
+            "This is a placeholder for a text for Clove."
+        ]
+    },
+    "maps": {
+        "Sunset": [
+            "This is a placeholder for a text for Sunset. but i edited it. hehehehe",
+            "this is a second text for sunset"
+        ],
+        "Lotus": [
+            "This is a placeholder for a text for Lotus."
+        ],
+        "Pearl": [
+            "This is a placeholder for a text for Pearl."
+        ],
+        "Fracture": [
+            "This is a placeholder for a text for Fracture."
+        ],
+        "Breeze": [
+            "This is a placeholder for a text for Breeze."
+        ],
+        "Icebox": [
+            "This is a placeholder for a text for Icebox."
+        ],
+        "Bind": [
+            "This is a placeholder for a text for Bind."
+        ],
+        "Haven": [
+            "This is a placeholder for a text for Haven."
+        ],
+        "Split": [
+            "This is a placeholder for a text for Split."
+        ],
+        "Ascent": [
+            "This is a placeholder for a text for Ascent."
+        ]
+    }
+}

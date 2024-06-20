@@ -13,12 +13,14 @@ class Text(models.Model):
 
 
 class Agent(models.Model):
+    id = models.BigAutoField(primary_key=True)
     name_en = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name_en
 
 class Map(models.Model):
+    id = models.BigAutoField(primary_key=True)
     name_en = models.CharField(max_length=30)
 
     def __str__(self):
@@ -30,8 +32,8 @@ class AgentSpecificText(models.Model):
 
     def __str__(self):
         if len(self.text) > 16:
-            return self.text[:16]
-        return self.text
+            return self.agent.name_en + ": " + self.text[:16]
+        return self.agent.name_en + ": " + self.text
 
 class MapSpecificText(models.Model):
     map = models.ForeignKey(Map, on_delete=models.CASCADE)
@@ -39,5 +41,5 @@ class MapSpecificText(models.Model):
 
     def __str__(self):
         if len(self.text) > 16:
-            return self.text[:16]
-        return self.text
+            return self.map.name_en + ": " + self.text[:16]
+        return self.map.name_en + ": " + self.text
