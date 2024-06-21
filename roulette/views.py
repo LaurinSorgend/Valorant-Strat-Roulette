@@ -5,12 +5,12 @@ from random import choice, randint
 from itertools import chain
 from .forms import RouletteForm
 
-AGENT_TEXT_PERCENTAGE = 30
-MAP_TEXT_PERCENTAGE = 30
+AGENT_TEXT_PERCENTAGE = 10
+MAP_TEXT_PERCENTAGE = 10
 
 
 def get_text(val_map=None, agents=[], attacking=False, defending=False):
-    # print(val_map, len(agents), attacking, defending, sep="; ")
+    print(val_map, len(agents), attacking, defending, sep="; ")
     texts = Text.objects.all()
     if val_map and agents:
         rand = randint(0, 100)
@@ -60,7 +60,7 @@ def index(request):
         if form.is_valid():
             val_map = form.cleaned_data["mapfield"]
             if val_map == "default":
-                return JsonResponse({'text': get_text()})
+                return JsonResponse({'text': get_text(agents=[Agent.objects.get(name_en="Cypher")])})
             else:
                 return JsonResponse({'text': get_text(val_map=Map.objects.get(name_en=val_map))})
     return render(

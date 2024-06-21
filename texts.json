@@ -24,7 +24,8 @@
             "This is a placeholder for a text for Viper."
         ],
         "Cypher": [
-            "You're <strong class=\"font-semibold text-slate-900 dark:text-white\">only</strong> objective this round is to take a <em class=\"font-italic\">Picture</em> with as many enemies as possible."
+            "This is a placeholder for a text for Cypher.",
+            "You're only objective this round is to take a Picture with as many enemies as possible."
         ],
         "Reyna": [
             "This is a placeholder for a text for Reyna."
@@ -112,6 +113,9 @@
         ],
         "Ascent": [
             "This is a placeholder for a text for Ascent."
+        ],
+        "Abyss": [
+            "This is a placeholder for a text for Abyss."
         ]
     }
 }
