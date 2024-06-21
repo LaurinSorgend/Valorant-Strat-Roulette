@@ -44,7 +44,12 @@ module.exports = {
         '../../roulette/forms.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+            height: {
+              '128': '32rem',
+              '144': '36rem', // Example of custom height
+            }
+          }
     },
     plugins: [
         /**
