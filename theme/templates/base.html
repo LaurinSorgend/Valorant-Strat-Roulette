@@ -1,20 +1,30 @@
 {% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    <title>Django Tailwind</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>{% block title %}Django + Tailwind CSS + Flowbite{% endblock title %}</title>
-		{% tailwind_css %}
-	</head>
-
-	<body class="bg-zinc-600 font-serif leading-normal tracking-normal">
-		<div class="container mx-auto">
-			<section class="flex items-center justify-center h-screen">
-				{%block content%}<h1 class="text-5xl text-blue-400">Django + Tailwind = ❤️</h1>{%endblock content%}
-			</section>
-		</div>
-	</body>
+    <head>
+        <meta name="description" content="Valorant Strat Roulette">
+        <meta name="keywords" content="Valorant, Strat, Roulette">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>
+            {% block title %}
+                Django + Tailwind CSS + Flowbite
+            {% endblock title %}
+        </title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        {% tailwind_css %}
+    </head>
+    <body class="bg-zinc-600 font-serif leading-normal tracking-normal">
+        <div class="container mx-auto">
+            <section class="flex items-center justify-center min-h-screen">
+                {% block content %}
+                    <h1 class="text-5xl text-blue-400">Django + Tailwind = ❤️</h1>
+                {% endblock content %}
+            </section>
+        </div>
+    </body>
+	{% block script %}{% endblock script %}
 </html>

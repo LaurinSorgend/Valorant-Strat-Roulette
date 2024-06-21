@@ -1,10 +1,12 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 from roulette.models import Agent, Map, Text, AgentSpecificText, MapSpecificText
 from random import choice, randint
 from itertools import chain
+from .forms import RouletteForm
 
-AGENT_TEXT_PERCENTAGE = 10
-MAP_TEXT_PERCENTAGE = 10
+AGENT_TEXT_PERCENTAGE = 30
+MAP_TEXT_PERCENTAGE = 30
 
 
 def get_text(val_map=None, agents=[], attacking=False, defending=False):
@@ -19,9 +21,8 @@ def get_text(val_map=None, agents=[], attacking=False, defending=False):
             texts = val_map.mapspecifictext_set.all()
     elif val_map:
         rand = randint(0, 100)
-        if rand < AGENT_TEXT_PERCENTAGE:
-            agent = choice(agents)
-            texts = agent.agentspecifictext_set.all()
+        if rand < MAP_TEXT_PERCENTAGE:
+            texts = val_map.mapspecifictext_set.all()
     elif agents:
         rand = randint(0, 100)
         if rand < AGENT_TEXT_PERCENTAGE:
@@ -54,8 +55,23 @@ def get_text(val_map=None, agents=[], attacking=False, defending=False):
 
 # Create your views here.
 def index(request):
+    if request.method == "POST":
+        form = RouletteForm(request.POST)
+        if form.is_valid():
+            val_map = form.cleaned_data["mapfield"]
+            if val_map == "default":
+                return JsonResponse({'text': get_text()})
+            else:
+                return JsonResponse({'text': get_text(val_map=Map.objects.get(name_en=val_map))})
     return render(
         request,
         "roulette/index.html",
-        {"text": get_text(agents=list(Agent.objects.all()))},
+        {
+            "text": choice(
+                Text.objects.filter(
+                    random_player=False, attacking=False, defending=False
+                )
+            ).text,
+            "form": RouletteForm(),
+        },
     )
