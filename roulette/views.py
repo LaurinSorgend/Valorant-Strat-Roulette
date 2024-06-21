@@ -10,7 +10,7 @@ MAP_TEXT_PERCENTAGE = 30
 
 
 def get_text(val_map=None, agents=[], attacking=False, defending=False):
-    print(val_map, len(agents), attacking, defending, sep="; ")
+    # print(val_map, len(agents), attacking, defending, sep="; ")
     texts = Text.objects.all()
     if val_map and agents:
         rand = randint(0, 100)
