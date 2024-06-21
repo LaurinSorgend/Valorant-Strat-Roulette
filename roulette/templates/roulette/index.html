@@ -4,38 +4,23 @@
 {% endblock title %}
 {% block content %}
   <div class="box-content h-1/2 w-3/6 bg-white/30 backdrop-blur-md p-6 rounded-lg shadow-lg">
-    <p id="main-text" class="text-3xl text-slate-700 mb-4">{{ text }}</p>
-    <form id="main_form" class="max-w-sm mx-auto">
-      {% csrf_token %}
-      {{ form.mapfield }}
-      {% comment %} <select name="mapfield"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              id="id_mapfield">
-        <option value="default" selected="">Select a Map</option>
-        <option value="Sunset">Sunset</option>
-        <option value="Lotus">Lotus</option>
-        <option value="Pearl">Pearl</option>
-        <option value="Fracture">Fracture</option>
-        <option value="Breeze">Breeze</option>
-        <option value="Icebox">Icebox</option>
-        <option value="Bind">Bind</option>
-        <option value="Haven">Haven</option>
-        <option value="Split">Split</option>
-        <option value="Ascent">Ascent</option>
-      </select> {% endcomment %}
-      <button type="submit"
-              class="bg-blue-500 text-white px-4 py-4 rounded-lg flex items-center mt-3 ">
-        <svg class="w-6 h-6 text-gray-800 dark:text-white"
-             aria-hidden="true"
-             xmlns="http://www.w3.org/2000/svg"
-             width="24"
-             height="24"
-             fill="none"
-             viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.651 7.65a7.131 7.131 0 0 0-12.68 3.15M18.001 4v4h-4m-7.652 8.35a7.13 7.13 0 0 0 12.68-3.15M6 20v-4h4" />
-        </svg>
-      </button>
-    </form>
+      <p id="main-text" class="text-3xl text-slate-700 mb-4 max-w-5/6 mx-4">{{ text }}</p>
+      <form id="main_form" class="max-w-sm mx-4">
+        {% csrf_token %}
+        {{ form.mapfield }}
+        <button type="submit"
+                class="bg-blue-500 text-white px-4 py-4 rounded-lg flex items-center mt-3 ">
+          <svg class="w-6 h-6 text-gray-800 dark:text-white"
+               aria-hidden="true"
+               xmlns="http://www.w3.org/2000/svg"
+               width="24"
+               height="24"
+               fill="none"
+               viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.651 7.65a7.131 7.131 0 0 0-12.68 3.15M18.001 4v4h-4m-7.652 8.35a7.13 7.13 0 0 0 12.68-3.15M6 20v-4h4" />
+          </svg>
+        </button>
+      </form>
   </div>
 {% endblock content %}
 {% block script %}
