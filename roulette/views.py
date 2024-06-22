@@ -59,6 +59,7 @@ def index(request):
         form = RouletteForm(request.POST)
         if form.is_valid():
             val_map = form.cleaned_data["mapfield"]
+            print(form.cleaned_data["agentfield"])
             if val_map == "default":
                 return JsonResponse({'text': get_text(agents=[Agent.objects.get(name_en="Cypher")])})
             else:
