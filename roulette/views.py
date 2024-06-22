@@ -10,7 +10,7 @@ MAP_TEXT_PERCENTAGE = 10
 
 
 def get_text(val_map=None, agents=[], attacking=False, defending=False):
-    print(val_map, len(agents), attacking, defending, sep="; ")
+    print(val_map, [agent.name_en for agent in agents], attacking, defending, sep="; ")
     texts = Text.objects.all()
     if val_map and agents:
         rand = randint(0, 100)
@@ -59,11 +59,14 @@ def index(request):
         form = RouletteForm(request.POST)
         if form.is_valid():
             val_map = form.cleaned_data["mapfield"]
-            print(form.cleaned_data["agentfield"])
+            agents = form.cleaned_data["agentfield"]
             if val_map == "default":
-                return JsonResponse({'text': get_text(agents=[Agent.objects.get(name_en="Cypher")])})
-            else:
-                return JsonResponse({'text': get_text(val_map=Map.objects.get(name_en=val_map))})
+                val_map = None
+            if agents:
+                agents = [Agent.objects.get(name_en=agent) for agent in agents]
+            attacking = "Attacking" in form.cleaned_data["sidefield"]
+            defending = "Defending" in form.cleaned_data["sidefield"]
+            return JsonResponse({'text': get_text(val_map=Map.objects.get(name_en=val_map), agents=agents, attacking=attacking, defending=defending)})
     return render(
         request,
         "roulette/index.html",

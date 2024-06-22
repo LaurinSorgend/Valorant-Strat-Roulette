@@ -11,7 +11,7 @@ map_names = [("default", "Select a Map")] + [
 class RouletteForm(forms.Form):
     mapfield = forms.ChoiceField(
         choices=map_names,
-        label="Select a Map",
+        label="Select a Map.",
         initial="default",
         widget=forms.Select(
             attrs={
@@ -21,7 +21,13 @@ class RouletteForm(forms.Form):
     )
     agentfield = forms.MultipleChoiceField(
         required=False,
-        label="Select Agents on your team",
-        widget=forms.CheckboxSelectMultiple(attrs={"class": "grid grid-cols-4 gap-4"}),
+        label="Select Agents on your team.",
+        widget=forms.CheckboxSelectMultiple(),
         choices=agent_names,
+    )
+    sidefield = forms.MultipleChoiceField(
+        required=False,
+        label="Select Which site you are on.",
+        widget=forms.CheckboxSelectMultiple(),
+        choices=(("Attacking", "Attacking"),("Defending", "Defending")),
     )

@@ -5,10 +5,44 @@
 {% endblock title %}
 {% block content %}
   <div class="box-content w-1/2 h-128 bg-white/30 backdrop-blur-md p-6 rounded-lg shadow-lg mx-auto my-8 flex flex-col justify-between">
-    <p id="main-text" class="text-3xl text-slate-700">{{ text }}</p>
+    <p id="main-text" class="text-3xl text-gray-800">{{ text }}</p>
     <form id="main_form" class="w-full">
       {% csrf_token %}
       <div class="mb-2">{{ form.mapfield }}</div>
+      <ul id="id_sidefield" class="grid w-full gap-6 md:grid-cols-2 mb-2">
+        <li>
+          <input name="sidefield"
+                 type="checkbox"
+                 id="id_sidefield_0"
+                 value="Attacking"
+                 class="hidden peer" />
+          <label for="id_sidefield_0"
+                 class="inline-flex items-center justify-between w-full h-12 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <div class="flex items-center pl-4">
+              <svg class="w-8 h-8 text-red-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8.597 3.2A1 1 0 0 0 7.04 4.289a3.49 3.49 0 0 1 .057 1.795 3.448 3.448 0 0 1-.84 1.575.999.999 0 0 0-.077.094c-.596.817-3.96 5.6-.941 10.762l.03.049a7.73 7.73 0 0 0 2.917 2.602 7.617 7.617 0 0 0 3.772.829 8.06 8.06 0 0 0 3.986-.975 8.185 8.185 0 0 0 3.04-2.864c1.301-2.2 1.184-4.556.588-6.441-.583-1.848-1.68-3.414-2.607-4.102a1 1 0 0 0-1.594.757c-.067 1.431-.363 2.551-.794 3.431-.222-2.407-1.127-4.196-2.224-5.524-1.147-1.39-2.564-2.3-3.323-2.788a8.487 8.487 0 0 1-.432-.287Z"/>
+              </svg>
+              <div class="w-full text-lg font-semibold">Attacking</div>
+            </div>
+          </label>
+        </li>
+        <li>
+          <input name="sidefield"
+                 type="checkbox"
+                 id="id_sidefield_1"
+                 value="Defending"
+                 class="hidden peer" />
+          <label for="id_sidefield_1"
+                 class="inline-flex items-center justify-between w-full h-12 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <div class="flex items-center pl-4">
+              <svg class="w-8 h-8 text-blue-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.356 3.066a1 1 0 0 0-.712 0l-7 2.666A1 1 0 0 0 4 6.68a17.695 17.695 0 0 0 2.022 7.98 17.405 17.405 0 0 0 5.403 6.158 1 1 0 0 0 1.15 0 17.406 17.406 0 0 0 5.402-6.157A17.694 17.694 0 0 0 20 6.68a1 1 0 0 0-.644-.949l-7-2.666Z"/>
+              </svg>              
+              <div class="w-full text-lg font-semibold">Defending</div>
+            </div>
+          </label>
+        </li>
+      </ul>
       <ul id="id_agentfield" class="grid w-full gap-1 md:grid-cols-8">
         <li class="mb-2">
           <input name="agentfield"
@@ -17,7 +51,7 @@
                  value="Brimstone"
                  class="hidden peer" />
           <label for="id_agentfield_0"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette\img\Brimstone_icon.webp' %}"
@@ -32,7 +66,7 @@
                  value="Phoenix"
                  class="hidden peer" />
           <label for="id_agentfield_1"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Phoenix_icon.webp' %}"
@@ -47,7 +81,7 @@
                  value="Sage"
                  class="hidden peer" />
           <label for="id_agentfield_2"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Sage_icon.webp' %}"
@@ -62,7 +96,7 @@
                  value="Sova"
                  class="hidden peer" />
           <label for="id_agentfield_3"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Sova_icon.webp' %}"
@@ -77,7 +111,7 @@
                  value="Viper"
                  class="hidden peer" />
           <label for="id_agentfield_4"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Viper_icon.webp' %}"
@@ -92,7 +126,7 @@
                  value="Cypher"
                  class="hidden peer" />
           <label for="id_agentfield_5"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Cypher_icon.webp' %}"
@@ -107,7 +141,7 @@
                  value="Reyna"
                  class="hidden peer" />
           <label for="id_agentfield_6"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Reyna_icon.webp' %}"
@@ -122,7 +156,7 @@
                  value="Killjoy"
                  class="hidden peer" />
           <label for="id_agentfield_7"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Killjoy_icon.webp' %}"
@@ -137,7 +171,7 @@
                  value="Breach"
                  class="hidden peer" />
           <label for="id_agentfield_8"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Breach_icon.webp' %}"
@@ -152,7 +186,7 @@
                  value="Omen"
                  class="hidden peer" />
           <label for="id_agentfield_9"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Omen_icon.webp' %}"
@@ -167,7 +201,7 @@
                  value="Jett"
                  class="hidden peer" />
           <label for="id_agentfield_10"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Jett_icon.webp' %}"
@@ -182,7 +216,7 @@
                  value="Raze"
                  class="hidden peer" />
           <label for="id_agentfield_11"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Raze_icon.webp' %}"
@@ -197,7 +231,7 @@
                  value="Skye"
                  class="hidden peer" />
           <label for="id_agentfield_12"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Skye_icon.webp' %}"
@@ -212,7 +246,7 @@
                  value="Yoru"
                  class="hidden peer" />
           <label for="id_agentfield_13"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Yoru_icon.webp' %}"
@@ -227,7 +261,7 @@
                  value="Astra"
                  class="hidden peer" />
           <label for="id_agentfield_14"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Astra_icon.webp' %}"
@@ -242,7 +276,7 @@
                  value="Kay/O"
                  class="hidden peer" />
           <label for="id_agentfield_15"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Kayo_icon.webp' %}"
@@ -257,7 +291,7 @@
                  value="Chamber"
                  class="hidden peer" />
           <label for="id_agentfield_16"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Chamber_icon.webp' %}"
@@ -272,7 +306,7 @@
                  value="Neon"
                  class="hidden peer" />
           <label for="id_agentfield_17"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Neon_icon.webp' %}"
@@ -287,7 +321,7 @@
                  value="Fade"
                  class="hidden peer" />
           <label for="id_agentfield_18"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Fade_icon.webp' %}"
@@ -302,7 +336,7 @@
                  value="Harbor"
                  class="hidden peer" />
           <label for="id_agentfield_19"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Harbor_icon.webp' %}"
@@ -317,7 +351,7 @@
                  value="Gekko"
                  class="hidden peer" />
           <label for="id_agentfield_20"
-                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 class="inline-flex items-center justify-between w-12 h-12 pl-1.5 text-gray-800 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="block">
               <img class="w-8 h-8"
                    src="{% static 'roulette/img/Gekko_icon.webp' %}"

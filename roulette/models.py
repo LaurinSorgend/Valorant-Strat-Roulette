@@ -10,8 +10,8 @@ class Text(models.Model):
     defending = models.BooleanField(default=False)
 
     def __str__(self):
-        if len(self.text) > 16:
-            return self.text[:16]
+        if len(self.text) > 48:
+            return self.text[:48]
         return self.text
 
 
@@ -39,8 +39,8 @@ class AgentSpecificText(models.Model):
     defending = models.BooleanField(default=False)
 
     def __str__(self):
-        if len(self.text) > 16:
-            return self.agent.name_en + ": " + self.text[:16]
+        if len(self.text) > 48:
+            return self.agent.name_en + ": " + self.text[:48]
         return self.agent.name_en + ": " + self.text
 
 
@@ -52,6 +52,6 @@ class MapSpecificText(models.Model):
     defending = models.BooleanField(default=False)
 
     def __str__(self):
-        if len(self.text) > 16:
-            return self.map.name_en + ": " + self.text[:16]
+        if len(self.text) > 48:
+            return self.map.name_en + ": " + self.text[:48]
         return self.map.name_en + ": " + self.text

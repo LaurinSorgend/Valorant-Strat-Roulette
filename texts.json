@@ -2,7 +2,7 @@
     "generic": [
         "You're only allowed to shoot while moving.",
         "__random_player__ is the only one that is allowed to reload Weapons. If this Player is dead, everyone can reload.",
-        "__attacking__ You're only allowed to use secondary weapons (pistols) until the Spike is planted",
+        "__attacking__ You're only allowed to use secondary weapons (pistols) until the Spike is planted.",
         "You are not allowed to shoot until your team gets a kill using knife or util.",
         "__defending__ You cant shhot until the spike is planted."
     ],
