@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib import admin
 
 # Create your models here.
 class Text(models.Model):
@@ -18,7 +18,7 @@ class Text(models.Model):
 class Agent(models.Model):
     id = models.BigAutoField(primary_key=True)
     name_en = models.CharField(max_length=30)
-
+    @admin.display(empty_value="???")
     def __str__(self):
         return self.name_en
 

@@ -4,18 +4,22 @@
         "__random_player__ is the only one that is allowed to reload Weapons. If this Player is dead, everyone can reload.",
         "__attacking__ You're only allowed to use secondary weapons (pistols) until the Spike is planted.",
         "You are not allowed to shoot until your team gets a kill using knife or util.",
-        "__defending__ You cant shhot until the spike is planted."
+        "__defending__ You cant shoot until the spike is planted.",
+        "The floor is Lava! Try to stay of the ground at all times possible",
+        "Try to protect the Player with the most deaths at all costs.",
+        "__defending__ Every player must pruchase an odin or Aris"
     ],
     "agents": {
         "Brimstone": [
-            "This is a placeholder for a text for Brimstone.",
-            "this is a second text for brimmy"
+            "__attacking__ When entrying a site, place all 3 smokes in a straight line and plant in it.",
+            "Everyone rush as fast as possible using Brimstone's Stim Beacon"
         ],
         "Phoenix": [
             "This is a placeholder for a text for Phoenix."
         ],
         "Sage": [
-            "This is a placeholder for a text for Sage."
+            "__defending__ Everyone get stack on the same site and go on the Sage Wall",
+            "If you want to get healed you must meow or bark."
         ],
         "Sova": [
             "This is a placeholder for a text for Sova."
@@ -24,7 +28,6 @@
             "This is a placeholder for a text for Viper."
         ],
         "Cypher": [
-            "This is a placeholder for a text for Cypher.",
             "You're only objective this round is to take a Picture with as many enemies as possible."
         ],
         "Reyna": [
@@ -46,7 +49,8 @@
             "This is a placeholder for a text for Raze."
         ],
         "Skye": [
-            "This is a placeholder for a text for Skye."
+            "This is a placeholder for a text for Skye.",
+            "If you want to get healed you must meow or bark."
         ],
         "Yoru": [
             "This is a placeholder for a text for Yoru."

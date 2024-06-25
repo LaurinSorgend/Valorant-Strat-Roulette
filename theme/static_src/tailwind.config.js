@@ -6,6 +6,7 @@
  */
 
 module.exports = {
+    darkMode: 'media',
     content: [
         "./node_modules/flowbite/**/*.js",
         /**

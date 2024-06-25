@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'theme',
     'roulette',
     'django_browser_reload',
+    'django_user_agents',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_browser_reload.middleware.BrowserReloadMiddleware',
+    'django_user_agents.middleware.UserAgentMiddleware',
 ]
 
 ROOT_URLCONF = 'frenly_goobers.urls'
@@ -134,3 +136,12 @@ NPM_BIN_PATH = 'C:\\Users\\glpla\\scoop\\apps\\nodejs-lts\\current\\npm.cmd'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#         'LOCATION': '127.0.0.1:11211',
+#     }
+# }
+# USER_AGENTS_CACHE = 'default'
